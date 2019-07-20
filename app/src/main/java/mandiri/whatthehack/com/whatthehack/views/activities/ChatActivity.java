@@ -2,6 +2,7 @@ package mandiri.whatthehack.com.whatthehack.views.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -218,6 +219,7 @@ public class ChatActivity extends AppCompatActivity implements GoogleApiClient.O
                                             FriendlyMessage friendlyMessage) {
                 mProgressBar.setVisibility(ProgressBar.INVISIBLE);
                 if (!friendlyMessage.getName().equals("Mandiri")) {
+                    viewHolder.itemView.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.colorAccent));
                 }
                 if (friendlyMessage.getText() != null) {
                     viewHolder.messageTextView.setText(friendlyMessage.getText());

@@ -56,7 +56,7 @@ public class SignInActivity extends AppCompatActivity implements
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestServerAuthCode("317609268684-ts1ol15dr2n7kj6ddet3uqp3a9vc3ai2.apps.googleusercontent.com")
+                .requestIdToken("")
                 .requestEmail()
                 .build();
         mGoogleApiClient = new GoogleApiClient.Builder(this)
