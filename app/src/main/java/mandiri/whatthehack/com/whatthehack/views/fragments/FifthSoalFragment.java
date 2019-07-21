@@ -1,6 +1,7 @@
 package mandiri.whatthehack.com.whatthehack.views.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,16 +11,17 @@ import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import mandiri.whatthehack.com.whatthehack.R;
+import mandiri.whatthehack.com.whatthehack.views.activities.ProfilResikoActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FirstSoalFragment.OnFragmentInteractionListener} interface
+ * {@link FifthSoalFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FirstSoalFragment#newInstance} factory method to
+ * Use the {@link FifthSoalFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FirstSoalFragment extends Fragment {
+public class FifthSoalFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,10 +33,9 @@ public class FirstSoalFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    private LinearLayout nextButton;
+    private LinearLayout goToProfilButton;
 
-
-    public FirstSoalFragment() {
+    public FifthSoalFragment() {
         // Required empty public constructor
     }
 
@@ -44,11 +45,11 @@ public class FirstSoalFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FirstSoalFragment.
+     * @return A new instance of fragment FifthSoalFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FirstSoalFragment newInstance(String param1, String param2) {
-        FirstSoalFragment fragment = new FirstSoalFragment();
+    public static FifthSoalFragment newInstance(String param1, String param2) {
+        FifthSoalFragment fragment = new FifthSoalFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -69,7 +70,16 @@ public class FirstSoalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first_soal, container, false);
+        View view = inflater.inflate(R.layout.fragment_fifth_soal, container, false);
+        goToProfilButton = (LinearLayout) view.findViewById(R.id.llNextButton);
+        goToProfilButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ProfilResikoActivity.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -20,7 +20,8 @@
         <activity android:name=".views.activities.SignInActivity" />
         <activity android:name=".views.activities.InvestasiActivity" />
         <activity android:name=".views.activities.KontakFinansialActivity" />
-        <activity android:name=".views.activities.CekTipeActivity"></activity>
+        <activity android:name=".views.activities.CekTipeActivity" />
+        <activity android:name=".views.activities.ProfilResikoActivity"></activity>
     </application>
 
 </manifest>
